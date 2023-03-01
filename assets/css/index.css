@@ -1,0 +1,14 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    margin: 0 auto;
+  }
+
+#forecast {
+    display: none;
+  }
+.forecast-card{
+    color: white;
+  }
