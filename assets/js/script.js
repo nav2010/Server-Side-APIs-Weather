@@ -28,7 +28,7 @@ function weatherData(city) {
     }).then(function(response) {
         let lat = response.coord.lat;
         let lon = response.coord.lon;
-        let forecastURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}&units=metric`
+        let forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}&units=metric`
         $.ajax({
             url: forecastURL,
             method: "GET"
@@ -97,12 +97,5 @@ $(".forecast-card").css({"background-color" : "#2D3E50"})
 })
 
 // get weather data by clicking search history buttons and renders both current and future weather data for user
-function buttonClick(e){
-    const buttonClk=e.target;
-    if (e.target.matches("button")){
-        city=buttonClk.textContent.trim();
-        weatherData(city);
-    }
-}
-$(document).on("click", buttonClick);
+
 
